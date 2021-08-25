@@ -10,8 +10,8 @@ sh "mvn -f /root/my-app/pom.xml site"
 stage("deploy-httpd"){
 steps{
 sh """
-scp -r -o StrictHostKeyChecking=no /root/my-app/target/site/* 192.168.1.9:/var/www/html/
-ssh root@192.168.1.9 systemctl restart httpd
+scp -r -o StrictHostKeyChecking=no /root/my-app/target/site/* 192.168.1.13:/var/www/html/
+ssh root@192.168.1.13 systemctl restart httpd
 """
 }
 }
